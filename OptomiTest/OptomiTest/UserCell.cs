@@ -13,8 +13,8 @@ namespace OptomiTest
 
         internal void UpdateCell(User user)
         {
-            lblUsername.Text = user.FirstName;
-            lblPasword.Text = user.LastName;
+            lblUsername.Text = user.Username;
+            lblPasword.Text = user.Password;
         }
     }
 }

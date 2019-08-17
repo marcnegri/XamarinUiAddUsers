@@ -29,7 +29,7 @@ namespace OptomiTest
             {
                 if (PasswordValidation(txtPassword.Text, out string errorMessage))
                 {
-                    userDb.Insert(new Models.User { FirstName = txtUsername.Text, LastName = txtPassword.Text });
+                    userDb.Insert(new Models.User { Username = txtUsername.Text, Password = txtPassword.Text });
                     UIAlertController okAlertController = UIAlertController.Create("Account created !", "Congratulations !", UIAlertControllerStyle.Alert);
                     okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, alert => NavigationController.PopToRootViewController(true)));
                     

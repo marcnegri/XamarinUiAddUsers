@@ -46,9 +46,7 @@ namespace OptomiTest
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             base.PrepareForSegue(segue, sender);
-
             var userDetailsViewController = segue.DestinationViewController as UserDetailsViewController;
-            //userDetailsViewController.IdUser = "1";
         }
 
         /// <summary>
@@ -78,7 +76,6 @@ namespace OptomiTest
         public override void DidReceiveMemoryWarning()
         {
             base.DidReceiveMemoryWarning();
-            // Release any cached data, images, etc that aren't in use.
         }
     }
 }

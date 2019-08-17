@@ -18,14 +18,14 @@ namespace OptomiTest
         {
             UserCell cell = null;
             try { 
-            cell = (UserCell)tableView.DequeueReusableCell("user_cell_id", indexPath); //new UITableViewCell(UITableViewCellStyle.Default, "");
+                cell = (UserCell)tableView.DequeueReusableCell("user_cell_id", indexPath);
 
-            var user = lstUsers[indexPath.Row];
-            cell.UpdateCell(user);
-            //cell.TextLabel.Text = lstUsers[indexPath.Row].FirstName;
+                var user = lstUsers[indexPath.Row];
+                cell.UpdateCell(user);
 
-            return cell;
-            }catch(Exception ex)
+                return cell;
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
