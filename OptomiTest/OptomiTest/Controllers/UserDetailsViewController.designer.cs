@@ -20,11 +20,11 @@ namespace OptomiTest
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField txtFirstName { get; set; }
+        UIKit.UITextField txtPassword { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField txtLastName { get; set; }
+        UIKit.UITextField txtUsername { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
@@ -33,14 +33,14 @@ namespace OptomiTest
                 btnSave = null;
             }
 
-            if (txtFirstName != null) {
-                txtFirstName.Dispose ();
-                txtFirstName = null;
+            if (txtPassword != null) {
+                txtPassword.Dispose ();
+                txtPassword = null;
             }
 
-            if (txtLastName != null) {
-                txtLastName.Dispose ();
-                txtLastName = null;
+            if (txtUsername != null) {
+                txtUsername.Dispose ();
+                txtUsername = null;
             }
         }
     }

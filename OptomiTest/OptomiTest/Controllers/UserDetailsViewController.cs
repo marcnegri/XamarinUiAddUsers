@@ -25,14 +25,24 @@ namespace OptomiTest
 
         private void BtnSave_Clicked(object sender, EventArgs e)
         {
-           string errorMessage = null;
-           try
+            try
             {
-                if (PasswordValidation(txtLastName.Text, out errorMessage))
-                    userDb.Insert(new Models.User { FirstName = txtFirstName.Text, LastName = txtLastName.Text });
+                if (PasswordValidation(txtPassword.Text, out string errorMessage))
+                {
+                    userDb.Insert(new Models.User { FirstName = txtUsername.Text, LastName = txtPassword.Text });
+                    UIAlertController okAlertController = UIAlertController.Create("Account created !", "Congratulations !", UIAlertControllerStyle.Alert);
+                    okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, alert => NavigationController.PopToRootViewController(true)));
+                    
+                    PresentViewController(okAlertController, true, null);
+                }
                 else
-                    Console.WriteLine(errorMessage);
-            }catch(Exception ex)
+                {
+                    UIAlertController okAlertController = UIAlertController.Create("Your password is incorrect", errorMessage, UIAlertControllerStyle.Alert);
+                    okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+                    PresentViewController(okAlertController, true, null);
+                }
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -46,6 +56,7 @@ namespace OptomiTest
             if (string.IsNullOrWhiteSpace(input))
             {
                 errorMessage = "The password can not be empty";
+                return false;
             }
 
             var hasNumber = new Regex(@"[0-9]+");
